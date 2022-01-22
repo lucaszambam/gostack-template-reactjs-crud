@@ -174,7 +174,7 @@ describe('Dashboard', () => {
       fireEvent.click(getByTestId('edit-food-1'));
     });
 
-    const inputImage = getByPlaceholderText('Cole o link aqui');
+    const inputImage = getByPlaceholderText('Cole o link da imagem aqui');
     const inputName = getByPlaceholderText('Ex: Moda Italiana');
     const inputValue = getByPlaceholderText('Ex: 19.90');
     const inputDescription = getByPlaceholderText('Descrição');
