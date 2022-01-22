@@ -1,7 +1,6 @@
-import { Form as Unform } from '@unform/web';
 import styled from 'styled-components';
 
-export const Form = styled(Unform)`
+export const Container = styled.div`
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -14,15 +13,15 @@ export const Form = styled(Unform)`
   }
 
   button {
+    display: flex;
+    justify-content: center;
     margin-top: 48px;
     align-self: flex-end;
-  }
 
-  button {
     font-weight: 600;
     border-radius: 8px;
     border: 0;
-    background: #39b100;
+    background: #ff4c4c;
     color: #fff;
 
     display: flex;
@@ -36,7 +35,7 @@ export const Form = styled(Unform)`
     .icon {
       display: flex;
       padding: 16px 16px;
-      background: #41c900;
+      background: #ff6666;
       border-radius: 0 8px 8px 0;
       margin: 0 auto;
     }

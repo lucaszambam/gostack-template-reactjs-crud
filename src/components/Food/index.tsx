@@ -13,16 +13,16 @@ interface IFoodPlate {
 
 interface IProps {
   food: IFoodPlate;
-  handleDelete: (id: number) => {};
   handleEditFood: (food: IFoodPlate) => void;
   handleUpdateFood: (food: IFoodPlate) => void;
+  handleRemoveFood: (food: IFoodPlate) => void;
 }
 
 const Food: React.FC<IProps> = ({
   food,
-  handleDelete,
   handleEditFood,
   handleUpdateFood,
+  handleRemoveFood,
 }: IProps) => {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
@@ -65,7 +65,7 @@ const Food: React.FC<IProps> = ({
           <button
             type="button"
             className="icon"
-            onClick={() => handleDelete(food.id)}
+            onClick={() => handleRemoveFood(food)}
             data-testid={`remove-food-${food.id}`}
           >
             <FiTrash size={20} />

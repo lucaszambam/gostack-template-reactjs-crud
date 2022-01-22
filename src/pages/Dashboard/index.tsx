@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Food from '../../components/Food';
 import Header from '../../components/Header';
 import ModalAddFood from '../../components/ModalAddFood';
+import ModalDeleteFood from '../../components/ModalDeleteFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import api from '../../services/api';
 import { FoodsContainer } from './styles';
@@ -18,8 +19,12 @@ interface IFoodPlate {
 const Dashboard: React.FC = () => {
   const [foods, setFoods] = useState<IFoodPlate[]>([]);
   const [editingFood, setEditingFood] = useState<IFoodPlate>({} as IFoodPlate);
+  const [deletingFood, setDeletingFood] = useState<IFoodPlate>(
+    {} as IFoodPlate,
+  );
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   useEffect(() => {
     async function loadFoods(): Promise<void> {
@@ -71,10 +76,18 @@ const Dashboard: React.FC = () => {
     setEditModalOpen(!editModalOpen);
   }
 
+  function toggleDeleteModal(): void {
+    setDeleteModalOpen(!deleteModalOpen);
+  }
+
   function handleEditFood(food: IFoodPlate): void {
     setEditingFood(food);
-    console.log({ food });
     toggleEditModal();
+  }
+
+  function handleRemoveFood(food: IFoodPlate): void {
+    setDeletingFood(food);
+    toggleDeleteModal();
   }
 
   return (
@@ -92,15 +105,22 @@ const Dashboard: React.FC = () => {
         handleUpdateFood={handleUpdateFood}
       />
 
+      <ModalDeleteFood
+        isOpen={deleteModalOpen}
+        setIsOpen={toggleDeleteModal}
+        handleDeleteFood={handleDeleteFood}
+        deletingFood={deletingFood}
+      />
+
       <FoodsContainer data-testid="foods-list">
         {foods &&
           foods.map(food => (
             <Food
               key={food.id}
               food={food}
-              handleDelete={handleDeleteFood}
               handleEditFood={handleEditFood}
               handleUpdateFood={handleUpdateFood}
+              handleRemoveFood={handleRemoveFood}
             />
           ))}
       </FoodsContainer>

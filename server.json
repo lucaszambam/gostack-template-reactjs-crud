@@ -9,28 +9,19 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png"
     },
     {
-      "image": "https://i2.wp.com/viviana.com.br/blog/wp-content/uploads/2018/10/m00.png?fit=750%2C422&ssl=1",
-      "name": "Macarrão com a-",
-      "price": "15,90",
-      "description": "Macarrão com alondegas de carne.",
-      "id": 4,
-      "available": true
-    },
-    {
-      "image": "https://i2.wp.com/viviana.com.br/blog/wp-content/uploads/2018/10/m00.png?fit=750%2C422&ssl=1",
-      "name": "pratoasd",
-      "price": "14,29",
-      "description": "asfsdgdfhdhfdg",
-      "id": 6,
-      "available": true
-    },
-    {
-      "name": "Ao molho PIKAS",
-      "description": "Macarrão ao molho branco HEHEHEHE, fughi e cheiro verde das montanhas.",
-      "price": "19.90",
-      "available": true,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
+      "name": "Ao molho",
+      "price": "19.90",
+      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
       "id": 7
+    },
+    {
+      "image": "gdfgdfgd",
+      "name": "gdfgdfgdfg",
+      "price": "dfgdfgdfg",
+      "description": "dfgdfgdf",
+      "id": 8,
+      "available": false
     }
   ]
 }
