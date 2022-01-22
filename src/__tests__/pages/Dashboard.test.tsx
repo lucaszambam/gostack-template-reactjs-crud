@@ -262,6 +262,10 @@ describe('Dashboard', () => {
       fireEvent.click(getByTestId('remove-food-1'));
     });
 
+    await act(async () => {
+      fireEvent.click(getByTestId('delete-food-button'));
+    });
+
     expect(getByTestId('foods-list')).toBeEmpty();
   });
 
