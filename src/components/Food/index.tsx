@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
 import { FiEdit3, FiTrash } from 'react-icons/fi';
-
 import { Container } from './styles';
 
 interface IFoodPlate {
@@ -17,21 +15,28 @@ interface IProps {
   food: IFoodPlate;
   handleDelete: (id: number) => {};
   handleEditFood: (food: IFoodPlate) => void;
+  handleUpdateFood: (food: IFoodPlate) => void;
 }
 
 const Food: React.FC<IProps> = ({
   food,
   handleDelete,
   handleEditFood,
+  handleUpdateFood,
 }: IProps) => {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   async function toggleAvailable(): Promise<void> {
-    // TODO UPDATE STATUS (available)
+    const newFoodStatus = !food.available;
+    setIsAvailable(newFoodStatus);
+
+    const newFood = { ...food, available: newFoodStatus };
+
+    handleUpdateFood(newFood);
   }
 
   function setEditingFood(): void {
-    // TODO - SET THE ID OF THE CURRENT ITEM TO THE EDITING FOOD AND OPEN MODAL
+    handleEditFood(food);
   }
 
   return (

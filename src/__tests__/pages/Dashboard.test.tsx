@@ -1,10 +1,8 @@
-import React from 'react';
-
-import { render, fireEvent, act, wait } from '@testing-library/react';
+import { act, fireEvent, render, wait } from '@testing-library/react';
 import AxiosMock from 'axios-mock-adapter';
-import api from '../../services/api';
-
+import React from 'react';
 import Dashboard from '../../pages/Dashboard';
+import api from '../../services/api';
 
 const apiMock = new AxiosMock(api);
 
@@ -88,7 +86,7 @@ describe('Dashboard', () => {
       fireEvent.click(getByText('Novo Prato'));
     });
 
-    const inputImage = getByPlaceholderText('Cole o link aqui');
+    const inputImage = getByPlaceholderText('Cole o link da imagem aqui');
     const inputName = getByPlaceholderText('Ex: Moda Italiana');
     const inputValue = getByPlaceholderText('Ex: 19.90');
     const inputDescription = getByPlaceholderText('Descrição');
