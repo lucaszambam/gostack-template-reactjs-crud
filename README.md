@@ -8,7 +8,7 @@ In this project, developed by [Rocketseat](https://www.rocketseat.com.br/). I bu
 
 To initiate the `json-server`, run the following command:
 
-```js
+```bash
   yarn json-server server.json -p 3333
 ```
 
