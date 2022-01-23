@@ -8,18 +8,18 @@ In this project, developed by [Rocketseat](https://www.rocketseat.com.br/). I bu
 
 To initiate the `json-server`, run the following command:
 
-```shell
+```js
   yarn json-server server.json -p 3333
 ```
 
 To run project:
 
-```shell
+```js
   yarn start
 ```
 
 To run tests:
 
-```shell
+```js
   yarn test
 ```
